@@ -1,0 +1,462 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  width: 100%;
+  background-color: black;
+  color: whitesmoke;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    "Open Sans",
+    "Helvetica Neue",
+    sans-serif;
+}
+
+main {
+  position: relative;
+}
+
+section {
+  min-height: 100vh;
+  position: relative;
+  z-index: 2;
+}
+
+#canvas-elem::after {
+  content: "";
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  background-image: url(/background-xxs.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: all 0.3s linear;
+}
+
+#section-1 {
+  --gap: 5rem;
+  position: relative;
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 2.5rem;
+    padding-top: 3.5rem;
+
+    svg {
+      max-width: 5rem;
+      width: 100%;
+      height: 100%;
+    }
+  }
+  .middle {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap);
+
+    .left,
+    .right {
+      width: 50%;
+    }
+    .left {
+      display: flex;
+      align-items: center;
+      justify-content: end;
+      padding-block: 7rem;
+    }
+
+    h1 {
+      font-size: 7rem;
+      line-height: 0.8;
+      text-align: right;
+    }
+  }
+  .bottom {
+    display: flex;
+    justify-content: space-between;
+    gap: var(--gap);
+    padding-top: 5rem;
+
+    .left,
+    .right {
+      width: 50%;
+    }
+    .right {
+      display: flex;
+      justify-content: start;
+      padding-block: 5rem;
+      flex-direction: column;
+      gap: 2rem;
+
+      .second {
+        opacity: 0.5;
+        font-size: 0.8rem;
+      }
+      .first {
+        font-size: 1.6rem;
+      }
+      p {
+        font-weight: 200;
+        line-height: 1.5;
+      }
+      a {
+        color: whitesmoke;
+        text-decoration: none;
+        font-size: 0.77rem;
+      }
+    }
+  }
+  .first-line {
+    width: 35rem;
+    background-color: rgba(255, 0, 0, 0.395);
+    height: 1px;
+    position: absolute;
+    transform: rotate(45deg) translate(0, -17rem);
+  }
+  .second-line {
+    width: 10rem;
+    background-color: rgba(255, 0, 0, 0.395);
+    height: 1px;
+    position: absolute;
+    transform: rotate(135deg);
+    top: 33%;
+    right: 12%;
+  }
+}
+
+#section-2 {
+  .titles {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-block: 10rem;
+    padding-left: 5rem;
+    .feature {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      opacity: 0.5;
+
+      small {
+        margin-top: 0.6rem;
+        font-size: 1rem;
+        margin-bottom: 3rem;
+        width: 150px;
+        margin-left: 13.8rem;
+        display: inline-block;
+      }
+    }
+    .title {
+      display: flex;
+      gap: 4rem;
+      align-items: center;
+      opacity: 0.5;
+      padding-block: 2rem;
+      cursor: pointer;
+
+      h1 {
+        font-size: 4.5rem;
+        font-weight: 100;
+        line-height: 1;
+      }
+      small {
+        margin-top: 0.6rem;
+        font-size: 0.7rem;
+        width: 150px;
+        display: inline-block;
+      }
+    }
+
+    .title:hover {
+      opacity: 1;
+    }
+  }
+}
+
+main:has(#section-2 .title:hover) #canvas-elem:after {
+  opacity: 0;
+}
+
+.images {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  top: 0;
+  left: 0;
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: all 0.3s linear;
+  }
+}
+
+main:has(#section-2 .title[img-title="tomorrowland"]:hover)
+  .images
+  #tomorrowland {
+  opacity: 1;
+  background-color: rgb(16, 9, 48);
+}
+main:has(#section-2 .title[img-title="navypier"]:hover) .images #navypier {
+  opacity: 1;
+  background-color: rgb(16, 9, 48);
+}
+main:has(#section-2 .title[img-title="msichicago"]:hover) .images #msichicago {
+  opacity: 1;
+  background-color: rgb(16, 9, 48);
+}
+main:has(#section-2 .title[img-title="thiswas"]:hover) .images #thiswas {
+  opacity: 1;
+  background-color: rgb(16, 9, 48);
+}
+main:has(#section-2 .title[img-title="kikk"]:hover) .images #kikk {
+  opacity: 1;
+  background-color: rgb(1, 15, 92, 0.675);
+}
+main:has(#section-2 .title[img-title="kennedy"]:hover) .images #kennedy {
+  opacity: 1;
+  background-color: rgb(16, 9, 48);
+}
+main:has(#section-2 .title[img-title="royal"]:hover) .images #royal {
+  opacity: 1;
+  background-color: rgb(176, 4, 4);
+}
+
+#section-3 {
+  --gap: 5rem;
+  padding-block: 10rem;
+  padding-inline: 10rem;
+  padding-bottom: 0rem;
+  position: relative;
+  z-index: 0;
+  isolation: isolate;
+  min-height: initial;
+  .top,
+  .bottom {
+    display: flex;
+    width: 100;
+  }
+  .left,
+  .right {
+    width: 50%;
+  }
+  .top {
+    display: flex;
+
+    justify-content: space-between;
+    gap: var(--gap);
+
+    .left {
+      display: flex;
+      flex-direction: column;
+      text-align: left;
+      gap: 2rem;
+      padding-block: 7rem;
+      padding-left: 8rem;
+      padding-right: 2rem;
+
+      p {
+        opacity: 0.5;
+        font-weight: 200;
+        font-size: 0.9rem;
+      }
+
+      h3 {
+        font-size: 3rem;
+        line-height: 1.2;
+      }
+    }
+  }
+}
+#section-4 {
+  .top .left {
+    padding-left: 5rem;
+  }
+  .bottom {
+    display: flex;
+    width: 100%;
+    gap: 3rem;
+  }
+  .left,
+  .right {
+    flex: 1;
+  }
+
+  .bottom {
+    display: flex;
+    position: relative;
+    z-index: 100;
+
+    .left {
+      flex: 1; /* left empty space */
+    }
+
+    .right {
+      flex: 1;
+      display: flex;
+      gap: 3rem;
+      position: relative;
+      padding-left: 3rem;
+
+      p {
+        max-width: 200px;
+        line-height: 1.6;
+        opacity: 0.5;
+        font-weight: 200;
+        font-size: 0.9rem;
+      }
+
+      .first-line {
+        position: absolute;
+
+        /* 🔥 THIS IS THE MAGIC */
+        left: 0; /* start from center */
+        top: 50%; /* vertically center */
+
+        width: 25rem;
+        height: 1px;
+        background: rgba(235, 10, 10, 0.8);
+
+        transform: translate(-85%, +1000%) rotate(45deg);
+        pointer-events: none;
+      }
+    }
+  }
+
+  .footer {
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* full screen ending */
+    overflow: hidden;
+    color: #fff;
+
+    /* 🔵 SVG LAYER */
+    .footer__bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+
+      svg {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    /* 🔴 GRADIENT (50% screen) */
+    .footer__gradient {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 65vh;
+
+      background: linear-gradient(
+        to top,
+        black 0%,
+        rgba(0, 0, 0, 0.95) 30%,
+        rgba(0, 0, 0, 0.6) 60%,
+        transparent 100%
+      );
+
+      z-index: 2;
+    }
+
+    /* 📝 CONTENT */
+    .footer__container {
+      position: relative;
+      z-index: 3; /* always above gradient */
+
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 6rem 2rem;
+
+      hr {
+        opacity: 0.5;
+      }
+
+      .footer__top {
+        text-align: center;
+        margin-bottom: 2rem;
+
+        .footer__heading {
+          font-size: clamp(2.5rem, 5vw, 5rem);
+          font-weight: 300;
+        }
+      }
+
+      .footer__middle {
+        display: flex;
+        justify-content: space-between;
+        gap: 3rem;
+
+        .footer__left {
+          flex: 1;
+
+          .footer__text {
+            max-width: 400px;
+            line-height: 1.6;
+            opacity: 0.7;
+          }
+        }
+
+        .footer__right {
+          flex: 1;
+          display: flex;
+          justify-content: flex-end;
+          gap: 4rem;
+
+          .footer__column {
+            display: flex;
+            flex-direction: column;
+
+            .footer__title {
+              margin-bottom: 1rem;
+              opacity: 0.5;
+            }
+
+            .footer__link {
+              margin-bottom: 0.5rem;
+              cursor: pointer;
+              transition: 0.3s;
+              text-decoration: none;
+              color: whitesmoke;
+
+              &:hover {
+                transform: translateX(5px);
+              }
+            }
+          }
+        }
+      }
+
+      .footer__bottom {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: space-between;
+        font-size: 0.8rem;
+        opacity: 0.5;
+      }
+    }
+  }
+}
