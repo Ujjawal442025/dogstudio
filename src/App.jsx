@@ -8,13 +8,13 @@ function App() {
     <>
       <main>
         <div className="images">
-          <img id="tomorrowland" src="/tomorrowland.png" alt="" />
-          <img id="navypier" src="/navypier.png" alt="" />
-          <img id="msichicago" src="/msichicago.png" alt="" />
-          <img id="thiswas" src="/thiswas.png" alt="" />
-          <img id="kikk" src="/kikk.png" alt="" />
-          <img id="kennedy" src="/kennedy.png" alt="" />
-          <img id="royal" src="/royal.png" alt="" />
+          <img id="tomorrowland" src={base + "tomorrowland.png"} alt="" />
+          <img id="navypier" src={base + "navypier.png"} alt="" />
+          <img id="msichicago" src={base + "msichicago.png"} alt="" />
+          <img id="thiswas" src={base + "thiswas.png"} alt="" />
+          <img id="kikk" src={base + "kikk.png"} alt="" />
+          <img id="kennedy" src={base + "kennedy.png"} alt="" />
+          <img id="royal" src={base + "royal.png"} alt="" />
         </div>
         <Canvas
           id="canvas-elem"
