@@ -4,6 +4,7 @@ import Dog from "./components/Dog";
 import { Canvas } from "@react-three/fiber";
 
 function App() {
+  const base = import.meta.env.BASE_URL;
   return (
     <>
       <main>

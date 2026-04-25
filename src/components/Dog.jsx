@@ -15,8 +15,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 const Dog = () => {
   gsap.registerPlugin(useGSAP());
   gsap.registerPlugin(ScrollTrigger);
+  const base = import.meta.env.BASE_URL;
 
-  const model = useGLTF("/models/dog.drc.glb");
+  const model = useGLTF(base + "models/dog.drc.glb");
 
   useThree(({ camera, scene, gl }) => {
     camera.position.z = 0.45;
@@ -30,15 +31,15 @@ const Dog = () => {
     actions["Take 001"].play();
   }, [actions]);
 
-  const [normalMap] = useTexture(["/dog_normals.jpg"]).map((texture) => {
+  const [normalMap] = useTexture([base + "/dog_normals.jpg"]).map((texture) => {
     texture.flipY = false;
     texture.colorSpace = THREE.SRGBColorSpace;
     return texture;
   });
 
   const [branchMap, branchNormalMap] = useTexture([
-    "/branches_diffuse.dds",
-    "branches_normals.dds",
+    base + "/branches_diffuse.dds",
+    base + "branches_normals.dds",
   ]).map((texture) => {
     texture.colorSpace = THREE.SRGBColorSpace;
     return texture;
@@ -66,26 +67,26 @@ const Dog = () => {
     mat19,
     mat20,
   ] = useTexture([
-    "/matcap/mat-1.png",
-    "/matcap/mat-2.png",
-    "/matcap/mat-3.png",
-    "/matcap/mat-4.png",
-    "/matcap/mat-5.png",
-    "/matcap/mat-6.png",
-    "/matcap/mat-7.png",
-    "/matcap/mat-8.png",
-    "/matcap/mat-9.png",
-    "/matcap/mat-10.png",
-    "/matcap/mat-11.png",
-    "/matcap/mat-12.png",
-    "/matcap/mat-13.png",
-    "/matcap/mat-14.png",
-    "/matcap/mat-15.png",
-    "/matcap/mat-16.png",
-    "/matcap/mat-17.png",
-    "/matcap/mat-18.png",
-    "/matcap/mat-19.png",
-    "/matcap/mat-20.png",
+    base + "/matcap/mat-1.png",
+    base + "/matcap/mat-2.png",
+    base + "/matcap/mat-3.png",
+    base + "/matcap/mat-4.png",
+    base + "/matcap/mat-5.png",
+    base + "/matcap/mat-6.png",
+    base + "/matcap/mat-7.png",
+    base + "/matcap/mat-8.png",
+    base + "/matcap/mat-9.png",
+    base + "/matcap/mat-10.png",
+    base + "/matcap/mat-11.png",
+    base + "/matcap/mat-12.png",
+    base + "/matcap/mat-13.png",
+    base + "/matcap/mat-14.png",
+    base + "/matcap/mat-15.png",
+    base + "/matcap/mat-16.png",
+    base + "/matcap/mat-17.png",
+    base + "/matcap/mat-18.png",
+    base + "/matcap/mat-19.png",
+    base + "/matcap/mat-20.png",
   ]).map((texture) => {
     texture.colorSpace = THREE.SRGBColorSpace;
     return texture;

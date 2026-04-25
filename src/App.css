@@ -42,7 +42,7 @@ section {
   top: 0;
   left: 0;
   z-index: -1;
-  background-image: url(/background-xxs.png);
+  background-image: url(/dogstudio/background-xxs.png);
   background-repeat: no-repeat;
   background-size: cover;
   transition: all 0.3s linear;
